@@ -1,0 +1,39 @@
+body {
+    background-color: #ffe4c1;
+}
+
+.name-list {
+    list-style: none;
+    padding: 0 2em;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    height: 2em;
+    padding: 0.1em 1em;
+    margin: 1em 0;
+
+    border-bottom: 2px solid #333;
+}
+
+.list-item h3 {
+    flex-grow: 1;
+}
+
+.list-item button {
+    all: unset;
+
+    cursor: pointer;
+    height: 80%;
+    aspect-ratio: 1 / 1;
+    background-image: url('play-button.svg');
+    background-size: cover;
+}
+
+.list-item button.playing {
+    background-image: url('pause-button.svg');
+}

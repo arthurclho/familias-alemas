@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png">
+  </head>
+  <body>
+    <main>
+      <h1>Hello, world!</h1>
+
+      <ul class="name-list">
+        <li class="list-item">
+          <h3>Baum</h3>
+          <button type="button" onclick="playAudio(this, 'Baum.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Berbert</h3>
+          <button type="button" onclick="playAudio(this, 'Berbert.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Blank</h3>
+          <button type="button" onclick="playAudio(this, 'Blank.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Brodt</h3>
+          <button type="button" onclick="playAudio(this, 'Brodt.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Brust</h3>
+          <button type="button" onclick="playAudio(this, 'Brust.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Bröder</h3>
+          <button type="button" onclick="playAudio(this, 'Bröder.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Brüstle</h3>
+          <button type="button" onclick="playAudio(this, 'Brüstle.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Böhlinger</h3>
+          <button type="button" onclick="playAudio(this, 'Böhlinger.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Böhm</h3>
+          <button type="button" onclick="playAudio(this, 'Böhm.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Class</h3>
+          <button type="button" onclick="playAudio(this, 'Class.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Daudt</h3>
+          <button type="button" onclick="playAudio(this, 'Daudt.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Denkwitz</h3>
+          <button type="button" onclick="playAudio(this, 'Denkwitz.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Dietrich</h3>
+          <button type="button" onclick="playAudio(this, 'Dietrich.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Eckhardt</h3>
+          <button type="button" onclick="playAudio(this, 'Eckhardt.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Emmerich</h3>
+          <button type="button" onclick="playAudio(this, 'Emmerich.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Heckert</h3>
+          <button type="button" onclick="playAudio(this, 'Heckert.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Heiderich</h3>
+          <button type="button" onclick="playAudio(this, 'Heiderich.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Müller</h3>
+          <button type="button" onclick="playAudio(this, 'Müller.m4a')"/>
+        </li>
+        <li class="list-item">
+          <h3>Wolf</h3>
+          <button type="button" onclick="playAudio(this, 'Wolf.m4a')"/>
+        </li>
+      </ul>
+
+    </main>
+
+    <audio id="audioPlayer">
+    
+    <script>
+      function playAudio(e, src) {
+          const audio_player = document.getElementById("audioPlayer");
+          const new_src = "audios/" + src;
+
+          document.querySelectorAll('.playing').forEach(e => {
+              e.classList.remove("playing");
+          });
+
+          // Already playing?
+          if (audio_player.getAttribute("src") === new_src && !audio_player.paused) {
+              audio_player.pause();
+              return;
+          }
+          
+          audio_player.setAttribute("src", "audios/" + src);
+          audio_player.load();
+          audio_player.play();
+
+          e.classList.add("playing");
+          audio_player.onpause = () => { e.classList.remove("playing") };
+      }
+    </script>
+  </body>
+</html>
