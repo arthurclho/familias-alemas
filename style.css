@@ -2,13 +2,21 @@ body {
     background-color: #ffe4c1;
 }
 
-h1 {
+main {
+    padding: 0 2em;
+}
+
+p {
+    text-align: justify;
+}
+
+h1, h2 {
     text-align: center;
 }
 
 .name-list {
     list-style: none;
-    padding: 0 2em;
+    padding: 0;
 }
 
 .list-item {
