@@ -2,7 +2,7 @@ import os
 
 LIST_ITEM_TEMPLATE = """        <li class="list-item">
           <h3>{nome}</h3>
-          <button type="button" onclick="playAudio(this, '{audio_file}')"/>
+          <button type="button" onclick="playAudio(this, '{audio_file}')"></button>
         </li>
 """
 
