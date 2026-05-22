@@ -50,9 +50,24 @@ h1, h2 {
     background-image: url('pause-button.svg');
 }
 
+.list-item button.loading {
+    background-image: url('loading-icon.svg');
+
+    animation: spin 1s ease-in-out infinite;
+}
+
 @media screen and (width >= 900px) {
     main {
         max-width: 80ch;
         margin: auto;
+    }
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
 }

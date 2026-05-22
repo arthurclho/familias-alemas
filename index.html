@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="normalize.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="icon" href="favicon.png">
+
+    <link rel="prefetch" href="loading-icon.svg">
+    <link rel="prefetch" href="pause-button.svg">
+    <link rel="prefetch" href="play-button.svg">
   </head>
   <body>
     <main>
@@ -222,13 +226,20 @@
               audio_player.pause();
               return;
           }
+
+          e.classList.add("loading");
+          audio_player.onplaying = () => {
+              e.classList.remove("loading");
+              e.classList.add("playing");
+          };
+          audio_player.onpause = () => {
+              e.classList.remove("playing");
+              e.classList.remove("loading");
+          };
           
           audio_player.setAttribute("src", "audios/" + src);
           audio_player.load();
           audio_player.play();
-
-          e.classList.add("playing");
-          audio_player.onpause = () => { e.classList.remove("playing") };
       }
     </script>
   </body>
