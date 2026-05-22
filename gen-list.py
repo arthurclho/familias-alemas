@@ -7,7 +7,7 @@ LIST_ITEM_TEMPLATE = """        <li class="list-item">
 """
 
 for _, _, files in os.walk('./audios'):
-    for f in files:
+    for f in sorted(files):
         if not f.endswith(".m4a"):
             continue
         
