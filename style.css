@@ -41,3 +41,10 @@ h1 {
 .list-item button.playing {
     background-image: url('pause-button.svg');
 }
+
+@media screen and (width >= 900px) {
+    main {
+        max-width: 80ch;
+        margin: auto;
+    }
+}
