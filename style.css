@@ -1,5 +1,6 @@
 body {
-    background-color: #ffe4c1;
+    /* background-color: #ffe4c1; */
+    background-color: #f0f0f0;
 }
 
 main {
@@ -10,8 +11,20 @@ p {
     text-align: justify;
 }
 
-h1, h2 {
+h2 {
     text-align: center;
+    font-size: 1.4em;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    max-width: 100%;
 }
 
 .name-list {
