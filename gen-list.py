@@ -7,7 +7,7 @@ LIST_ITEM_TEMPLATE = """        <li class="list-item">
 """
 
 for _, _, files in os.walk('./audios'):
-    for f in sorted(files):
+    for f in sorted(files, key=str.casefold):
         if not f.endswith(".ogg"):
             continue
         
